@@ -5,7 +5,10 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """Tracy DeWitt, 
+used: https://www.kite.com/python/answers
+/how-to-sort-a-list-of-tuples-by-the-second
+-value-in-python#:~:"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,8 +29,13 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+    count = 0
+
+    for chars in words:
+        if len(chars) >= 2 and chars[0] == chars[-1]:
+            count += 1
+
+    return count
 
 
 # B. front_x
@@ -42,8 +50,16 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    fx_list = []
+    no_x = []
+    for chars in words:
+        if chars.startswith('x'):
+            fx_list.append(chars)
+        else:
+            no_x.append(chars)
+
+    return sorted(fx_list) + sorted(no_x)
+        
 
 
 # C. sort_last
@@ -56,8 +72,9 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
+    tuples.sort(key=lambda x: x[-1])
+    return tuples
+
 
 
 # Provided simple test() function used in main() to print
@@ -86,19 +103,19 @@ def main():
 
     print('\nfront_x')
     test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
-         ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
+        ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
     test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']),
-         ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
+        ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
     test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),
-         ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
+        ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
 
     print('\nsort_last')
     test(sort_last([(1, 3), (3, 2), (2, 1)]),
-         [(2, 1), (3, 2), (1, 3)])
+        [(2, 1), (3, 2), (1, 3)])
     test(sort_last([(2, 3), (1, 2), (3, 1)]),
-         [(3, 1), (1, 2), (2, 3)])
+        [(3, 1), (1, 2), (2, 3)])
     test(sort_last([(1, 7), (1, 3), (3, 9, 4), (2, 2)]),
-         [(2, 2), (1, 3), (3, 9, 4), (1, 7)])
+        [(2, 2), (1, 3), (3, 9, 4), (1, 7)])
 
 
 # Standard boilerplate (python idiom) to call the main() function.
