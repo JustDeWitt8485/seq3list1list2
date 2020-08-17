@@ -5,7 +5,11 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+
+__author__ = """Tracy DeWitt
+used: https://www.kite.com/python/answers
+/how-to-sort-a-list-of-tuples-by-the-second
+-value-in-python#:~:"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,8 +30,13 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+    count = 0
+
+    for chars in words:
+        if len(chars) >= 2 and chars[0] == chars[-1]:
+            count += 1
+
+    return count
 
 
 # B. front_x
@@ -42,8 +51,15 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    fx_list = []
+    no_x = []
+    for chars in words:
+        if chars.startswith('x'):
+            fx_list.append(chars)
+        else:
+            no_x.append(chars)
+
+    return sorted(fx_list) + sorted(no_x)
 
 
 # C. sort_last
@@ -56,12 +72,13 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
-
+    tuples.sort(key=lambda x: x[-1])
+    return tuples
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
