@@ -5,7 +5,9 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """Tracy DeWitt, Manuel Velasco
+https://www.w3schools.com/python/ref_list_extend.asp
+https://www.w3schools.com/python/ref_string_join.asp"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +30,12 @@ __author__ = "???"
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    periph = []
+
+    for num in nums:
+        if num not in periph:
+            periph.append(num)
+    return periph
 
 
 # E. zip_merge
@@ -43,8 +49,11 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    zipped = zip(list1, list2)
+    em_list = []
+    for i in zipped:
+        em_list.append("".join(i))
+    return em_list
 
 
 # F. empty_filter
@@ -57,8 +66,9 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    # your code here
-    return
+    none_v = filter(None and "" .__ne__, list1)
+    list1 = list(none_v)
+    return list1
 
 
 # G. linear_merge
@@ -73,8 +83,8 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    list1.extend(list2)
+    return sorted(list1)
 
 
 # Provided simple test() function used in main() to print

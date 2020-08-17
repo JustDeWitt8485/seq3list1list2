@@ -5,7 +5,8 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = """Tracy DeWitt, 
+
+__author__ = """Tracy DeWitt
 used: https://www.kite.com/python/answers
 /how-to-sort-a-list-of-tuples-by-the-second
 -value-in-python#:~:"""
@@ -59,7 +60,6 @@ def front_x(words):
             no_x.append(chars)
 
     return sorted(fx_list) + sorted(no_x)
-        
 
 
 # C. sort_last
@@ -75,10 +75,10 @@ def sort_last(tuples):
     tuples.sort(key=lambda x: x[-1])
     return tuples
 
-
-
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
@@ -103,19 +103,19 @@ def main():
 
     print('\nfront_x')
     test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
-        ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
+         ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
     test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']),
-        ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
+         ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
     test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),
-        ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
+         ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
 
     print('\nsort_last')
     test(sort_last([(1, 3), (3, 2), (2, 1)]),
-        [(2, 1), (3, 2), (1, 3)])
+         [(2, 1), (3, 2), (1, 3)])
     test(sort_last([(2, 3), (1, 2), (3, 1)]),
-        [(3, 1), (1, 2), (2, 3)])
+         [(3, 1), (1, 2), (2, 3)])
     test(sort_last([(1, 7), (1, 3), (3, 9, 4), (2, 2)]),
-        [(2, 2), (1, 3), (3, 9, 4), (1, 7)])
+         [(2, 2), (1, 3), (3, 9, 4), (1, 7)])
 
 
 # Standard boilerplate (python idiom) to call the main() function.
