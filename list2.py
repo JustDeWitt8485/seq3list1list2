@@ -30,12 +30,13 @@ https://www.w3schools.com/python/ref_string_join.asp"""
 
 
 def remove_adjacent(nums):
-    periph = []
-
+    new_list = []
+    periph = None
     for num in nums:
-        if num not in periph:
-            periph.append(num)
-    return periph
+        if num != periph:
+            new_list.append(num)
+            periph = num
+    return new_list
 
 
 # E. zip_merge
