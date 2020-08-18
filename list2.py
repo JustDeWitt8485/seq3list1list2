@@ -67,7 +67,7 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    none_v = filter(None and "" .__ne__, list1)
+    none_v = filter(None and "", list1)
     list1 = list(none_v)
     return list1
 
